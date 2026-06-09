@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>录言 · 链接转文字知识库</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400;1,9..144,800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;600&display=swap" rel="stylesheet"></noscript>
+<style>
+:root{
+ --bg:#FAF7F2;--bg-card:#FFFFFF;--bg-side:#F2EDE5;--bg-accent:#FBF4EA;
+ --ink:#1C1B19;--ink-soft:#403C36;--ink-mute:#7C766B;--ink-faint:#B0A99E;
+ --line:#E5DFD3;--line-soft:#EFEAE0;
+ --primary:#0D5C63;--primary-soft:#DCE9EA;--accent:#A0451A;--accent-soft:#F4E4D6;
+ --gold:#9C7211;--gold-soft:#F5ECD3;--rose:#B23A48;--forest:#4A6741;--forest-soft:#E1E9DA;
+ --shadow-sm:0 1px 2px rgba(28,27,25,.05);--shadow-md:0 4px 14px rgba(28,27,25,.07);
+ --shadow-lg:0 18px 48px rgba(28,27,25,.10),0 4px 12px rgba(28,27,25,.05);
+ --fd:"Fraunces","Noto Serif SC","Songti SC",serif;--fz:"Noto Serif SC","Songti SC",serif;
+ --fb:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;--fm:"JetBrains Mono",monospace;
+}
+[data-theme=dark]{
+ --bg:#1A1815;--bg-card:#252320;--bg-side:#201E1A;--bg-accent:#272320;
+ --ink:#ECE7DE;--ink-soft:#CDC6BA;--ink-mute:#988F81;--ink-faint:#5C574F;--line:#3C3933;--line-soft:#2E2B27;
+ --primary:#74B4BA;--primary-soft:#1E3839;--accent:#E08C66;--accent-soft:#3A2418;
+ --gold:#D4A82C;--gold-soft:#3A2E14;--rose:#D67782;--forest:#8FB084;--forest-soft:#1F2A1A;
+ --shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 4px 14px rgba(0,0,0,.4);--shadow-lg:0 18px 48px rgba(0,0,0,.55);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+::selection{background:var(--accent);color:var(--bg)}
+a{color:inherit;text-decoration:none}
+.topbar{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 28px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-mark{width:33px;height:33px;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--fz);font-weight:700;font-size:18px;border-radius:8px}
+[data-theme=dark] .brand-mark{background:var(--accent)}
+.brand-tx{display:flex;flex-direction:column;line-height:1.15}
+.brand-tx b{font-family:var(--fz);font-weight:700;font-size:15px}
+.brand-tx span{font-family:var(--fd);font-style:italic;font-size:10.5px;color:var(--ink-mute);letter-spacing:.08em}
+.icon-btn{width:35px;height:35px;background:transparent;border:1px solid var(--line);border-radius:8px;cursor:pointer;color:var(--ink);font-size:15px;display:flex;align-items:center;justify-content:center;margin-left:auto}
+.icon-btn:hover{background:var(--bg-side)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px 120px}
+.masthead{position:relative;padding:64px 0 36px;border-bottom:1px solid var(--line);margin-bottom:30px;overflow:hidden}
+.masthead .ghost{position:absolute;right:-20px;top:10px;font-family:var(--fd);font-style:italic;font-weight:800;font-size:170px;color:var(--line-soft);line-height:1;z-index:0;pointer-events:none}
+.mh-eyebrow{font-family:var(--fd);font-style:italic;font-size:15px;color:var(--accent);letter-spacing:.06em;position:relative;z-index:1}
+.mh-title{font-family:var(--fz);font-weight:900;font-size:46px;line-height:1.18;margin-top:12px;position:relative;z-index:1}
+.mh-sub{margin-top:14px;font-size:15px;color:var(--ink-mute);max-width:36em;position:relative;z-index:1}
+.mh-stats{margin-top:26px;display:flex;flex-wrap:wrap;gap:30px;position:relative;z-index:1}
+.stat .n{font-family:var(--fd);font-size:30px;font-weight:600;color:var(--accent);line-height:1}
+.stat .l{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);margin-top:5px}
+.controls{position:sticky;top:58px;z-index:90;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);padding:14px 0;margin-bottom:6px}
+.searchbar{position:relative;max-width:100%}
+.searchbar input{width:100%;padding:12px 16px 12px 44px;background:var(--bg-card);border:1px solid var(--line);border-radius:11px;font-family:var(--fb);font-size:15px;color:var(--ink);box-shadow:var(--shadow-sm)}
+.searchbar input:focus{outline:none;border-color:var(--primary)}
+.searchbar::before{content:"⌕";position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--ink-mute);font-size:19px}
+.tags-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.tagchip{font-size:12.5px;color:var(--ink-soft);background:var(--bg-side);border:1px solid var(--line);padding:4px 13px;border-radius:20px;cursor:pointer;transition:all .15s}
+.tagchip:hover{border-color:var(--ink-mute)}
+.tagchip.on{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.count{font-size:12.5px;color:var(--ink-mute);margin:18px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+.card{display:flex;flex-direction:column;background:var(--bg-card);border:1px solid var(--line-soft);border-radius:15px;padding:22px 22px 18px;box-shadow:var(--shadow-sm);transition:transform .18s,box-shadow .18s,border-color .18s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--line)}
+.card .num{font-family:var(--fd);font-style:italic;font-weight:600;font-size:15px;color:var(--accent)}
+.card .ct{font-family:var(--fz);font-weight:700;font-size:18.5px;line-height:1.4;margin:8px 0 10px;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .abs{font-size:13px;color:var(--ink-mute);line-height:1.65;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:13px}
+.card .ctags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.card .ctags span{font-size:11px;color:var(--forest);background:var(--forest-soft);padding:1px 9px;border-radius:14px}
+.card .cfoot{margin-top:auto;display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink-mute);border-top:1px solid var(--line-soft);padding-top:12px}
+.card .guest{background:var(--primary);color:#fff;padding:2px 11px;border-radius:20px;font-weight:600;font-size:12px}
+[data-theme=dark] .card .guest{color:var(--bg)}
+.empty{text-align:center;color:var(--ink-mute);padding:60px 0;font-size:14px}
+.foot{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);text-align:center;font-size:12px;color:var(--ink-faint);line-height:2}
+@media(max-width:640px){.wrap,.topbar-inner{padding-left:18px;padding-right:18px}.mh-title{font-size:33px}.masthead .ghost{font-size:96px}.grid{grid-template-columns:1fr}}
+</style></head><body>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="index.html"><span class="brand-mark">录</span><span class="brand-tx"><b>录言</b><span>LùYán · Knowledge Base</span></span></a>
+<button class="icon-btn" id="themeBtn" title="切换深色/浅色">☾</button>
+</div></header>
+<div class="wrap">
+ <div class="masthead"><div class="ghost">KB</div>
+  <div class="mh-eyebrow">链接 · 转文字 · 自动结构化　·　摘要层公开</div>
+  <h1 class="mh-title">把每一个链接，<br>沉淀成可读、可检索的知识库</h1>
+  <div class="mh-sub">音视频链接 → 转录 → AI 整理与主题划分 → 一篇可读的访谈条目。公开版仅含导读 / 核心观点 / 脉络摘要，完整逐字稿请收听原音；当前收录《张小珺Jùn｜商业访谈录》。</div>
+  <div class="mh-stats">
+   <div class="stat"><div class="n">15</div><div class="l">条目</div></div>
+   <div class="stat"><div class="n">12</div><div class="l">位嘉宾</div></div>
+   <div class="stat"><div class="n">44<small style="font-size:16px"> 小时</small></div><div class="l">原音时长</div></div>
+   <div class="stat"><div class="n">22</div><div class="l">主题标签</div></div>
+  </div>
+ </div>
+ <div class="controls">
+  <div class="searchbar"><input id="q" placeholder="搜索标题 / 嘉宾 / 主题 / 导读…" autocomplete="off"></div>
+  <div class="tags-row"><span class="tagchip" data-t="AI">AI <small style="opacity:.6">7</small></span><span class="tagchip" data-t="创业">创业 <small style="opacity:.6">5</small></span><span class="tagchip" data-t="大模型">大模型 <small style="opacity:.6">5</small></span><span class="tagchip" data-t="技术趋势">技术趋势 <small style="opacity:.6">3</small></span><span class="tagchip" data-t="AI投资">AI投资 <small style="opacity:.6">2</small></span><span class="tagchip" data-t="硅谷">硅谷 <small style="opacity:.6">2</small></span><span class="tagchip" data-t="产品设计">产品设计 <small style="opacity:.6">2</small></span><span class="tagchip" data-t="具身智能">具身智能 <small style="opacity:.6">2</small></span><span class="tagchip" data-t="AI创业">AI创业 <small style="opacity:.6">2</small></span><span class="tagchip" data-t="消费电子">消费电子 <small style="opacity:.6">1</small></span><span class="tagchip" data-t="战略转型">战略转型 <small style="opacity:.6">1</small></span><span class="tagchip" data-t="AI转型">AI转型 <small style="opacity:.6">1</small></span><span class="tagchip" data-t="机器人">机器人 <small style="opacity:.6">1</small></span><span class="tagchip" data-t="汽车行业">汽车行业 <small style="opacity:.6">1</small></span><span class="tagchip" data-t="创业战略">创业战略 <small style="opacity:.6">1</small></span><span class="tagchip" data-t="创业机会">创业机会 <small style="opacity:.6">1</small></span><span class="tagchip" data-t="OpenAI">OpenAI <small style="opacity:.6">1</small></span><span class="tagchip" data-t="Token经济">Token经济 <small style="opacity:.6">1</small></span><span class="tagchip" data-t="软件变革">软件变革 <small style="opacity:.6">1</small></span><span class="tagchip" data-t="硅谷动态">硅谷动态 <small style="opacity:.6">1</small></span><span class="tagchip" data-t="跨界">跨界 <small style="opacity:.6">1</small></span><span class="tagchip" data-t="智能体">智能体 <small style="opacity:.6">1</small></span></div>
+ </div>
+ <div class="count" id="count">15 个条目</div>
+ <div class="grid"><a class="card" href="ep144.html" data-tags="创业|消费电子|AI|战略转型" data-search="144. 对阳萌的4小时访谈：消费电子死与生、第三类公司、端侧模型、产品方法、游戏模式 阳萌 安克创新创始人阳萌分享从google工程师到消费电子创业的历程，探讨公司转型深科技与ai的战略思考。 创业 消费电子 ai 战略转型"><div class="num">No.144</div><div class="ct">144. 对阳萌的4小时访谈：消费电子死与生、第三类公司、端侧模型、产品方法、游戏模式</div><div class="abs">安克创新创始人阳萌分享从Google工程师到消费电子创业的历程，探讨公司转型深科技与AI的战略思考。</div><div class="ctags"><span>创业</span><span>消费电子</span><span>AI</span><span>战略转型</span></div><div class="cfoot"><span class="guest">阳萌</span><span>原音 219 分</span><span>· 读 104 分</span></div></a><a class="card" href="ep143.html" data-tags="AI转型|机器人|汽车行业|创业战略" data-search="143. 对何小鹏的第二次访谈：更大赌注、人形机器人iron诞生、那场意外、技术剧变下ceo、gx和缝合怪 何小鹏 小鹏汽车ceo何小鹏分享企业ai转型、机器人战略与汽车行业竞争思考，揭秘去年重大技术赌注背后的逻辑与挑战。 ai转型 机器人 汽车行业 创业战略"><div class="num">No.143</div><div class="ct">143. 对何小鹏的第二次访谈：更大赌注、人形机器人Iron诞生、那场意外、技术剧变下CEO、GX和缝合怪</div><div class="abs">小鹏汽车CEO何小鹏分享企业AI转型、机器人战略与汽车行业竞争思考，揭秘去年重大技术赌注背后的逻辑与挑战。</div><div class="ctags"><span>AI转型</span><span>机器人</span><span>汽车行业</span><span>创业战略</span></div><div class="cfoot"><span class="guest">何小鹏</span><span>原音 88 分</span><span>· 读 57 分</span></div></a><a class="card" href="ep142.html" data-tags="AI投资|创业机会|技术趋势|OpenAI" data-search="142. 雨森的创投观察第2集：harness、下一个字节、2026大机会和stanley druckenmiller 雨森 真格基金合伙人雨森与主持人张小珺探讨ai投资趋势、技术突破与创业机会，分享对openai、anthropic等公司的观察与思考。 ai投资 创业机会 技术趋势 openai"><div class="num">No.142</div><div class="ct">142. 雨森的创投观察第2集：Harness、下一个字节、2026大机会和Stanley Druckenmiller</div><div class="abs">真格基金合伙人雨森与主持人张小珺探讨AI投资趋势、技术突破与创业机会，分享对OpenAI、Anthropic等公司的观察与思考。</div><div class="ctags"><span>AI投资</span><span>创业机会</span><span>技术趋势</span><span>OpenAI</span></div><div class="cfoot"><span class="guest">雨森</span><span>原音 139 分</span><span>· 读 117 分</span></div></a><a class="card" href="ep141.html" data-tags="AI投资|Token经济|软件变革|硅谷动态" data-search="141. freda的投资札记第2集：tokenmaxxing、把电机塞进蒸汽机、接力赛变篮球赛、孤独、人的连接 freda 投资专家freda与主持人张小珺探讨ai时代的投资逻辑、模型公司竞争格局及软件行业变革，揭示token经济与组织形态的未来趋势。 ai投资 token经济 软件变革 硅谷动态"><div class="num">No.141</div><div class="ct">141. Freda的投资札记第2集：Tokenmaxxing、把电机塞进蒸汽机、接力赛变篮球赛、孤独、人的连接</div><div class="abs">投资专家Freda与主持人张小珺探讨AI时代的投资逻辑、模型公司竞争格局及软件行业变革，揭示Token经济与组织形态的未来趋势。</div><div class="ctags"><span>AI投资</span><span>Token经济</span><span>软件变革</span><span>硅谷动态</span></div><div class="cfoot"><span class="guest">Freda</span><span>原音 84 分</span><span>· 读 51 分</span></div></a><a class="card" href="ep140.html" data-tags="AI|大模型|跨界|技术趋势" data-search="140. 对姚顺宇的4小时访谈：请允许我小疯一下！在anthropic和gemini训模型、技术预测、英雄主义已过去 姚顺宇 ai研究员姚顺宇分享从物理到ai的跨界经历，探讨大模型技术发展、中美ai差距及行业未来趋势。 ai 大模型 跨界 技术趋势"><div class="num">No.140</div><div class="ct">140. 对姚顺宇的4小时访谈：请允许我小疯一下！在Anthropic和Gemini训模型、技术预测、英雄主义已过去</div><div class="abs">AI研究员姚顺宇分享从物理到AI的跨界经历，探讨大模型技术发展、中美AI差距及行业未来趋势。</div><div class="ctags"><span>AI</span><span>大模型</span><span>跨界</span><span>技术趋势</span></div><div class="cfoot"><span class="guest">姚顺宇</span><span>原音 231 分</span><span>· 读 121 分</span></div></a><a class="card" href="ep139.html" data-tags="AI|智能体|大模型|创业|技术趋势" data-search="139. 【agent的综述】和苏煜聊agent技术史、openclaw moment、边界的消弭和社会的辐射 苏煜 本集探讨ai智能体的演进历程，重点解析语言驱动智能体的技术突破与openclaw带来的范式变革，揭示agent研究的未来方向。 ai 智能体 大模型 创业 技术趋势"><div class="num">No.139</div><div class="ct">139. 【Agent的综述】和苏煜聊Agent技术史、OpenClaw Moment、边界的消弭和社会的辐射</div><div class="abs">本集探讨AI智能体的演进历程，重点解析语言驱动智能体的技术突破与OpenClaw带来的范式变革，揭示Agent研究的未来方向。</div><div class="ctags"><span>AI</span><span>智能体</span><span>大模型</span><span>创业</span></div><div class="cfoot"><span class="guest">苏煜</span><span>原音 138 分</span><span>· 读 66 分</span></div></a><a class="card" href="ep138.html" data-tags="大模型|OpenClaw|Agent框架|群体智能" data-search="138. 对罗福莉3.5小时访谈：ai范式已然巨变！openclaw、agent范式很吃后训练、卡的分配、组织平权 嘉宾 张小珺与嘉宾探讨2026年大模型战争的第二幕，聚焦openclaw的技术突变、agent框架的竞争入场券及群体智能的崛起。 大模型 openclaw agent框架 群体智能"><div class="num">No.138</div><div class="ct">138. 对罗福莉3.5小时访谈：AI范式已然巨变！OpenClaw、Agent范式很吃后训练、卡的分配、组织平权</div><div class="abs">张小珺与嘉宾探讨2026年大模型战争的第二幕，聚焦OpenClaw的技术突变、Agent框架的竞争入场券及群体智能的崛起。</div><div class="ctags"><span>大模型</span><span>OpenClaw</span><span>Agent框架</span><span>群体智能</span></div><div class="cfoot"><span class="guest">嘉宾</span><span>原音 217 分</span><span>· 读 103 分</span></div></a><a class="card" href="ep137.html" data-tags="AI|数学|创业|硅谷" data-search="137. 对洪乐潼的4小时访谈：ai for math、把数学变成lean、数学天书中的证明、直觉、被创造与被发现的 洪乐潼 洪乐潼分享从数学竞赛到ai创业的历程，探讨数学与ai的结合点，以及她对ai for math未来的独特见解。 ai 数学 创业 硅谷"><div class="num">No.137</div><div class="ct">137. 对洪乐潼的4小时访谈：AI for Math、把数学变成Lean、数学天书中的证明、直觉、被创造与被发现的</div><div class="abs">洪乐潼分享从数学竞赛到AI创业的历程，探讨数学与AI的结合点，以及她对AI for Math未来的独特见解。</div><div class="ctags"><span>AI</span><span>数学</span><span>创业</span><span>硅谷</span></div><div class="cfoot"><span class="guest">洪乐潼</span><span>原音 264 分</span><span>· 读 141 分</span></div></a><a class="card" href="ep136.html" data-tags="AI|大模型|硅谷|Coding|AGI" data-search="136. 全球大模型季报第9集：和广密聊，coding是agi第二幕、硅谷御三家真相、模型正成为新一代os 广密 本集探讨ai大模型技术的最新进展，聚焦coding agent的崛起及其对agi发展的影响，分析硅谷御三家的战略差异。 ai 大模型 硅谷 coding agi"><div class="num">No.136</div><div class="ct">136. 全球大模型季报第9集：和广密聊，Coding是AGI第二幕、硅谷御三家真相、模型正成为新一代OS</div><div class="abs">本集探讨AI大模型技术的最新进展，聚焦Coding Agent的崛起及其对AGI发展的影响，分析硅谷御三家的战略差异。</div><div class="ctags"><span>AI</span><span>大模型</span><span>硅谷</span><span>Coding</span></div><div class="cfoot"><span class="guest">广密</span><span>原音 83 分</span><span>· 读 62 分</span></div></a><a class="card" href="ep135.html" data-tags="AI社交|创业|产品设计|网络效应" data-search="135. 和自然选择创始人tristan聊，elys、赛博分身、灵魂、context的获取与流动和ai社交网络 嘉宾 本集访谈探讨了ai社交产品elys的诞生背景、设计理念及未来愿景，嘉宾tristan分享了从游戏开发到ai创业的转型思考，核心聚焦context流动与ai时代的主体性构建。 ai社交 创业 产品设计 网络效应"><div class="num">No.135</div><div class="ct">135. 和自然选择创始人Tristan聊，Elys、赛博分身、灵魂、Context的获取与流动和AI社交网络</div><div class="abs">本集访谈探讨了AI社交产品Elys的诞生背景、设计理念及未来愿景，嘉宾Tristan分享了从游戏开发到AI创业的转型思考，核心聚焦context流动与AI时代的主体性构建。</div><div class="ctags"><span>AI社交</span><span>创业</span><span>产品设计</span><span>网络效应</span></div><div class="cfoot"><span class="guest">嘉宾</span><span>原音 113 分</span><span>· 读 74 分</span></div></a><a class="card" href="ep134.html" data-tags="AI|仿真技术|具身智能|数据产业" data-search="134. 【数据的综述】和谢晨聊，新时代的石油、历史、版图、数据金字塔、定价与recipe 谢晨 光轮智能创始人谢晨分享仿真技术在ai发展中的关键作用，探讨数据产业与具身智能的未来趋势。 ai 仿真技术 具身智能 数据产业"><div class="num">No.134</div><div class="ct">134. 【数据的综述】和谢晨聊，新时代的石油、历史、版图、数据金字塔、定价与Recipe</div><div class="abs">光轮智能创始人谢晨分享仿真技术在AI发展中的关键作用，探讨数据产业与具身智能的未来趋势。</div><div class="ctags"><span>AI</span><span>仿真技术</span><span>具身智能</span><span>数据产业</span></div><div class="cfoot"><span class="guest">谢晨</span><span>原音 158 分</span><span>· 读 66 分</span></div></a><a class="card" href="ep133.html" data-tags="人工智能|计算机视觉|创业|世界模型" data-search="133. 对谢赛宁的7小时马拉松访谈：世界模型、逃出硅谷、ami labs、两次拒绝ilya、杨立昆、李飞飞和42 谢赛宁 计算机视觉专家谢赛宁首次接受播客访谈，分享从拒绝openai到创立ai公司的历程，探讨世界模型与多模态智能的未来。 人工智能 计算机视觉 创业 世界模型"><div class="num">No.133</div><div class="ct">133. 对谢赛宁的7小时马拉松访谈：世界模型、逃出硅谷、AMI Labs、两次拒绝Ilya、杨立昆、李飞飞和42</div><div class="abs">计算机视觉专家谢赛宁首次接受播客访谈，分享从拒绝OpenAI到创立AI公司的历程，探讨世界模型与多模态智能的未来。</div><div class="ctags"><span>人工智能</span><span>计算机视觉</span><span>创业</span><span>世界模型</span></div><div class="cfoot"><span class="guest">谢赛宁</span><span>原音 405 分</span><span>· 读 249 分</span></div></a><a class="card" href="ep132.html" data-tags="自动驾驶|机器人创业|AI|技术路线|行业判断" data-search="132. 对星海图创始人高继扬的3小时访谈：鲶鱼、曾国藩、waymo与momenta的两面、一只狼与许华哲的离开 嘉宾 访谈围绕嘉宾从清华学霸到自动驾驶工程师再到机器人创业者的成长历程，探讨了自动驾驶与机器人行业的技术路线、创业心得与行业判断。 自动驾驶 机器人创业 ai 技术路线 行业判断"><div class="num">No.132</div><div class="ct">132. 对星海图创始人高继扬的3小时访谈：鲶鱼、曾国藩、Waymo与Momenta的两面、一只狼与许华哲的离开</div><div class="abs">访谈围绕嘉宾从清华学霸到自动驾驶工程师再到机器人创业者的成长历程，探讨了自动驾驶与机器人行业的技术路线、创业心得与行业判断。</div><div class="ctags"><span>自动驾驶</span><span>机器人创业</span><span>AI</span><span>技术路线</span></div><div class="cfoot"><span class="guest">嘉宾</span><span>原音 185 分</span><span>· 读 70 分</span></div></a><a class="card" href="ep131.html" data-tags="AI创业|智能驾驶|大模型|具身智能|技术战略" data-search="131. 印奇出任阶跃星辰董事长的访谈：聪明人的诱惑、取舍、超长链路残酷淘汰赛、阶跃函数和超多元方程 印奇 印奇分享从旷视到阶跃星辰、千里科技的创业历程，探讨ai与终端结合的机遇与挑战，以及对中国ai产业未来的思考。 ai创业 智能驾驶 大模型 具身智能 技术战略"><div class="num">No.131</div><div class="ct">131. 印奇出任阶跃星辰董事长的访谈：聪明人的诱惑、取舍、超长链路残酷淘汰赛、阶跃函数和超多元方程</div><div class="abs">印奇分享从旷视到阶跃星辰、千里科技的创业历程，探讨AI与终端结合的机遇与挑战，以及对中国AI产业未来的思考。</div><div class="ctags"><span>AI创业</span><span>智能驾驶</span><span>大模型</span><span>具身智能</span></div><div class="cfoot"><span class="guest">印奇</span><span>原音 121 分</span><span>· 读 72 分</span></div></a><a class="card" href="ep130.html" data-tags="产品经理|AI创业|妙鸭|大厂经历|产品设计" data-search="130. 张月光创业两年首次访谈：妙鸭不是ai native产品、流程到上下文设计、one way door和乙女游戏 嘉宾 产品经理张月光分享从大厂到创业的转型历程，揭秘现象级产品妙鸭背后的思考，探讨ai时代的产品设计与创业逻辑。 产品经理 ai创业 妙鸭 大厂经历 产品设计"><div class="num">No.130</div><div class="ct">130. 张月光创业两年首次访谈：妙鸭不是AI Native产品、流程到上下文设计、One Way Door和乙女游戏</div><div class="abs">产品经理张月光分享从大厂到创业的转型历程，揭秘现象级产品妙鸭背后的思考，探讨AI时代的产品设计与创业逻辑。</div><div class="ctags"><span>产品经理</span><span>AI创业</span><span>妙鸭</span><span>大厂经历</span></div><div class="cfoot"><span class="guest">嘉宾</span><span>原音 194 分</span><span>· 读 110 分</span></div></a></div>
+ <div class="empty" style="display:none"></div>
+ <div class="foot">录言 · 链接转文字知识库<br>链接转文字 · 自动结构化阅读 · 仅供个人学习</div>
+</div>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const tb=$('#themeBtn');
+function setT(t){document.documentElement.dataset.theme=t;tb.textContent=t==='dark'?'☀':'☾';localStorage.setItem('zw-theme',t);}
+setT(localStorage.getItem('zw-theme')||'light');
+tb.onclick=()=>setT(document.documentElement.dataset.theme==='dark'?'light':'dark');
+const cards=$$('.card'),q=$('#q'),cnt=$('#count');let tag='';
+function apply(){
+ const s=q.value.trim().toLowerCase();let n=0;
+ cards.forEach(c=>{
+  const okT=!tag||c.dataset.tags.split('|').includes(tag);
+  const okS=!s||c.dataset.search.includes(s);
+  const show=okT&&okS;c.style.display=show?'':'none';if(show)n++;
+ });
+ cnt.textContent=`${n} 个条目`+(tag?` · 标签「${tag}」`:'')+(s?` · 搜索「${q.value.trim()}」`:'');
+}
+q.addEventListener('input',apply);
+$$('.tagchip').forEach(ch=>ch.onclick=()=>{
+ const t=ch.dataset.t;tag=(tag===t)?'':t;
+ $$('.tagchip').forEach(x=>x.classList.toggle('on',x.dataset.t===tag));apply();
+});
+</script></body></html>
