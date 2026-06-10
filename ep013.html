@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>13. 邮轮小史，去寻找海面上的乌托邦 · 录言</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400;1,9..144,800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;600&display=swap" rel="stylesheet"></noscript>
+<style>
+:root{
+ --bg:#FAF7F2;--bg-card:#FFFFFF;--bg-side:#F2EDE5;--bg-accent:#FBF4EA;
+ --ink:#1C1B19;--ink-soft:#403C36;--ink-mute:#7C766B;--ink-faint:#B0A99E;
+ --line:#E5DFD3;--line-soft:#EFEAE0;
+ --primary:#0D5C63;--primary-soft:#DCE9EA;--accent:#A0451A;--accent-soft:#F4E4D6;
+ --gold:#9C7211;--gold-soft:#F5ECD3;--rose:#B23A48;--forest:#4A6741;--forest-soft:#E1E9DA;
+ --shadow-sm:0 1px 2px rgba(28,27,25,.05);--shadow-md:0 4px 14px rgba(28,27,25,.07);
+ --shadow-lg:0 18px 48px rgba(28,27,25,.10),0 4px 12px rgba(28,27,25,.05);
+ --fd:"Fraunces","Noto Serif SC","Songti SC",serif;
+ --fz:"Noto Serif SC","Songti SC","STSong",serif;
+ --fb:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+ --fm:"JetBrains Mono","Cascadia Code",monospace;
+ --measure:43rem;
+}
+[data-theme=dark]{
+ --bg:#1A1815;--bg-card:#252320;--bg-side:#201E1A;--bg-accent:#272320;
+ --ink:#ECE7DE;--ink-soft:#CDC6BA;--ink-mute:#988F81;--ink-faint:#5C574F;
+ --line:#3C3933;--line-soft:#2E2B27;
+ --primary:#74B4BA;--primary-soft:#1E3839;--accent:#E08C66;--accent-soft:#3A2418;
+ --gold:#D4A82C;--gold-soft:#3A2E14;--rose:#D67782;--forest:#8FB084;--forest-soft:#1F2A1A;
+ --shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 4px 14px rgba(0,0,0,.4);--shadow-lg:0 18px 48px rgba(0,0,0,.55);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.85;font-size:15px;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+::selection{background:var(--accent);color:var(--bg)}
+a{color:inherit}
+#progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent),var(--gold));width:0;z-index:1000;transition:width .1s}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1500px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:11px 24px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;white-space:nowrap}
+.brand-mark{width:32px;height:32px;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--fz);font-weight:700;font-size:17px;border-radius:8px}
+[data-theme=dark] .brand-mark{background:var(--accent)}
+.brand-tx{display:flex;flex-direction:column;line-height:1.15}
+.brand-tx b{font-family:var(--fz);font-weight:700;font-size:15px}
+.brand-tx span{font-family:var(--fd);font-style:italic;font-size:10.5px;color:var(--ink-mute);letter-spacing:.08em}
+.nav-link{font-size:13px;color:var(--ink-mute);text-decoration:none;padding:6px 10px;border-radius:7px}
+.nav-link:hover{color:var(--ink);background:var(--bg-side)}
+.search-box{flex:1;max-width:300px;position:relative;margin-left:6px}
+.search-box input{width:100%;padding:8px 14px 8px 36px;background:var(--bg-side);border:1px solid var(--line);border-radius:8px;font-family:var(--fb);font-size:13px;color:var(--ink)}
+.search-box input:focus{outline:none;border-color:var(--primary);background:var(--bg-card)}
+.search-box::before{content:"⌕";position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--ink-mute);font-size:16px}
+.topbar-actions{display:flex;gap:8px;margin-left:auto}
+.icon-btn{width:35px;height:35px;background:transparent;border:1px solid var(--line);border-radius:8px;cursor:pointer;color:var(--ink);font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.icon-btn:hover{background:var(--bg-side);border-color:var(--ink-mute)}
+.layout{display:grid;grid-template-columns:288px 1fr;max-width:1500px;margin:0 auto;padding-top:58px}
+.sidebar{position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;padding:28px 0 80px 22px;border-right:1px solid var(--line);background:var(--bg-side)}
+.sidebar::-webkit-scrollbar{width:6px}.sidebar::-webkit-scrollbar-thumb{background:var(--ink-faint);border-radius:3px}
+.ep-card{margin-right:18px;padding:14px 16px;background:var(--bg-card);border:1px solid var(--line-soft);border-radius:10px;box-shadow:var(--shadow-sm)}
+.ep-card .lbl{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:9px}
+.ep-card .src-type{display:inline-block;font-size:11px;color:var(--primary);background:var(--primary-soft);padding:1px 8px;border-radius:5px;margin-bottom:9px;font-weight:600}
+.ep-card .row{display:flex;justify-content:space-between;font-size:12.5px;padding:3px 0;color:var(--ink-soft)}
+.ep-card .row b{color:var(--ink);font-weight:600}
+.ep-card a.src{display:block;margin-top:9px;font-size:11px;color:var(--primary);text-decoration:none;word-break:break-all;border-top:1px dashed var(--line);padding-top:9px}
+.toc-h{font-family:var(--fz);font-size:11px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase;margin:26px 0 8px;font-weight:600}
+.toc a{display:flex;gap:9px;align-items:baseline;padding:6px 14px 6px 12px;margin-right:14px;color:var(--ink-soft);text-decoration:none;font-size:13px;border-left:2px solid transparent;transition:all .2s;line-height:1.45}
+.toc a:hover{color:var(--ink);border-left-color:var(--ink-faint)}
+.toc a.active{color:var(--accent);border-left-color:var(--accent);font-weight:600;background:linear-gradient(90deg,var(--accent-soft),transparent)}
+.toc a .n{font-family:var(--fd);font-style:italic;color:var(--ink-mute);font-size:12px;min-width:17px}
+.toc a.active .n{color:var(--accent)}
+.stats{margin:24px 18px 0 0;padding:14px 16px;background:var(--bg-card);border:1px solid var(--line-soft);border-radius:10px}
+.stats .lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:7px}
+.stats .v{font-family:var(--fd);font-size:26px;font-weight:600;color:var(--accent);line-height:1}
+.stats .v small{color:var(--ink-faint);font-size:14px}
+.stats .bar{margin-top:9px;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.stats .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--forest),var(--gold));transition:width .3s}
+.main{padding:46px 6vw 140px;max-width:920px}
+.hero{position:relative;margin-bottom:30px}
+.hero-ghost{position:absolute;top:-30px;right:-6px;font-family:var(--fd);font-style:italic;font-weight:800;font-size:190px;line-height:1;color:var(--line-soft);z-index:0;pointer-events:none;user-select:none}
+.eyebrow{font-family:var(--fd);font-style:italic;font-size:14px;color:var(--accent);letter-spacing:.06em;margin-bottom:14px;position:relative;z-index:1}
+.eyebrow .dot{color:var(--ink-faint);margin:0 8px}
+.hero-title{font-family:var(--fz);font-weight:900;font-size:37px;line-height:1.3;letter-spacing:-.01em;position:relative;z-index:1;max-width:18em}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;position:relative;z-index:1}
+.tag{font-size:11.5px;color:var(--forest);background:var(--forest-soft);padding:2px 11px;border-radius:20px;font-weight:600}
+.hero-meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:7px 15px;font-size:13px;color:var(--ink-mute);position:relative;z-index:1}
+.hero-meta b{color:var(--ink-soft);font-weight:600}
+.hero-meta .guest-pill{background:var(--primary);color:#fff;padding:2px 12px;border-radius:20px;font-weight:600}
+[data-theme=dark] .hero-meta .guest-pill{color:var(--bg)}
+/* 导读卡 */
+.brief-card{margin:34px 0 18px;max-width:var(--measure);padding:24px 28px;background:var(--bg-card);border:1px solid var(--line-soft);border-radius:14px;box-shadow:var(--shadow-md);position:relative;z-index:1}
+.brief-card .bh{font-family:var(--fz);font-size:12px;letter-spacing:.2em;color:var(--accent);font-weight:600;margin-bottom:10px;text-transform:uppercase}
+.brief-card .abs{font-family:var(--fz);font-size:17px;line-height:1.85;color:var(--ink-soft)}
+.brief-card .kh{margin-top:20px;font-size:11px;letter-spacing:.18em;color:var(--ink-mute);text-transform:uppercase;font-weight:600;border-top:1px solid var(--line-soft);padding-top:16px}
+.brief-card ul{list-style:none;margin-top:11px;display:grid;gap:9px}
+.brief-card li{position:relative;padding-left:22px;font-size:14.5px;color:var(--ink);line-height:1.65}
+.brief-card li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;background:var(--gold);border-radius:50%}
+.note{margin-top:14px;font-size:11.5px;color:var(--ink-faint);max-width:var(--measure)}
+.cta-card{margin:38px 0;max-width:var(--measure);padding:24px 28px;background:var(--primary-soft);border:1px solid var(--primary);border-radius:14px}
+.cta-card .cta-h{font-family:var(--fz);font-size:12px;letter-spacing:.2em;color:var(--primary);font-weight:700;text-transform:uppercase;margin-bottom:9px}
+.cta-card p{font-size:14.5px;color:var(--ink-soft);line-height:1.8;margin-bottom:15px}
+.cta-btn{display:inline-block;background:var(--primary);color:#fff;padding:10px 22px;border-radius:9px;font-weight:600;font-size:14px;text-decoration:none}
+[data-theme=dark] .cta-btn{color:var(--bg)}
+.outline-note{max-width:var(--measure);font-family:var(--fz);font-style:italic;color:var(--ink-mute);font-size:14px;margin:6px 0 4px}
+/* 章节 */
+.sec{scroll-margin-top:84px;padding-top:40px;max-width:var(--measure)}
+.sec-head{margin-bottom:8px}
+.sec-top{display:flex;align-items:baseline;gap:13px}
+.sec-num{font-family:var(--fd);font-style:italic;font-weight:600;font-size:28px;color:var(--accent);opacity:.65;line-height:1}
+.sec-title{font-family:var(--fz);font-weight:700;font-size:22px;color:var(--ink);letter-spacing:.01em}
+.sec-rule{flex:1;height:1px;background:var(--line);align-self:center}
+.sec-brief{margin:7px 0 24px 41px;font-family:var(--fz);font-style:italic;font-size:14.5px;color:var(--ink-mute);line-height:1.7}
+/* 对话 */
+.turn{margin:0 0 17px;max-width:var(--measure)}
+.q{margin:30px 0 15px;padding-left:16px;border-left:2.5px solid var(--accent)}
+.q .spk{font-family:var(--fz);font-size:11.5px;font-weight:600;color:var(--accent);letter-spacing:.06em;margin-bottom:3px}
+.q .txt{font-size:16px;font-weight:500;color:var(--ink-soft);line-height:1.7}
+.a .spk{font-family:var(--fz);font-size:12px;font-weight:600;color:var(--primary);margin-bottom:4px;letter-spacing:.04em}
+.a .txt{font-size:16.5px;color:var(--ink);line-height:1.96}
+.pull{margin:30px 0;padding:4px 0 6px 24px;border-left:3px solid var(--gold);font-family:var(--fz);font-weight:600;font-size:24px;line-height:1.55;color:var(--ink)}
+.pull .who{display:block;margin-top:9px;font-family:var(--fb);font-size:12px;font-weight:500;color:var(--ink-mute);letter-spacing:.04em}
+mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 2px;box-shadow:0 0 0 1px var(--gold) inset}
+.foot{margin-top:70px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-faint);text-align:center;line-height:2;max-width:var(--measure)}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.sidebar{display:none}.main{padding:30px 20px 90px}.hero-title{font-size:27px}.hero-ghost{font-size:108px}.search-box,.nav-link{display:none}.brief-card{padding:18px 18px}}
+</style></head><body>
+<div id="progress-bar"></div>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="index.html"><span class="brand-mark">录</span><span class="brand-tx"><b>录言</b><span>LùYán · Knowledge Base</span></span></a>
+<a class="nav-link" href="index.html">全部条目</a>
+<div class="search-box"><input id="search" placeholder="在本篇中搜索…" autocomplete="off"></div>
+<div class="topbar-actions"><button class="icon-btn" id="themeBtn" title="切换深色/浅色">☾</button></div>
+</div></header>
+<div class="layout">
+<aside class="sidebar">
+ <div class="ep-card"><span class="src-type">播客 · 小宇宙</span>
+  <div class="row"><span>嘉宾</span><b>嘉宾</b></div>
+  <div class="row"><span>主持</span><b>张小珺</b></div>
+  <div class="row"><span>时长</span><b>61 分钟</b></div>
+  <div class="row"><span>阅读</span><b>约 42 分钟</b></div>
+  <div class="row"><span>对话</span><b>193 轮</b></div>
+  <a class="src" href="https://www.xiaoyuzhoufm.com/episode/63caab586bcfd94102755c14" target="_blank">原始音频 ↗</a></div>
+ <div class="toc-h">本篇脉络</div>
+ <nav class="toc"><a href="#sec-0"><span class="n">01</span><span>邮轮业入门与渊源</span></a><a href="#sec-1"><span class="n">02</span><span>泰坦尼克号与历史事件</span></a><a href="#sec-2"><span class="n">03</span><span>邮轮巨头格局与并购史</span></a><a href="#sec-3"><span class="n">04</span><span>教母传统与海难文化</span></a><a href="#sec-4"><span class="n">05</span><span>奢华邮轮体验揭秘</span></a><a href="#sec-5"><span class="n">06</span><span>大众邮轮推荐与对比</span></a><a href="#sec-6"><span class="n">07</span><span>海上乌托邦的独特感受</span></a><a href="#sec-7"><span class="n">08</span><span>疫情后全球邮轮见闻</span></a><a href="#sec-8"><span class="n">09</span><span>中国邮轮市场演变</span></a><a href="#sec-9"><span class="n">10</span><span>邮轮基础知识与入门</span></a><a href="#sec-10"><span class="n">11</span><span>产业分工与利润链</span></a><a href="#sec-11"><span class="n">12</span><span>快问快答与创业愿景</span></a></nav>
+ <div class="stats"><div class="lbl">阅读进度</div><div class="v" id="readpct">0<small>%</small></div><div class="bar"><i id="readfill"></i></div></div>
+</aside>
+<main class="main">
+ <div class="hero"><div class="hero-ghost">13</div>
+  <div class="eyebrow">EPISODE 13<span class="dot">·</span>商业访谈 · 播客<span class="dot">·</span>2023-01-20</div>
+  <h1 class="hero-title">13. 邮轮小史，去寻找海面上的乌托邦</h1>
+  <div class="tags"><span class="tag">邮轮</span><span class="tag">旅游</span><span class="tag">商业</span><span class="tag">历史</span><span class="tag">奢华体验</span></div>
+  <div class="hero-meta"><span class="guest-pill">嘉宾</span><span>主持 <b>张小珺</b></span><span>原音 <b>61</b> 分 · 读 <b>42</b> 分</span></div>
+ </div>
+ <div class="brief-card"><div class="bh">本集导读</div><div class="abs">资深邮轮从业者刘建斌分享邮轮业历史、巨头格局、奢华与大众邮轮差异、中国邮轮市场演变及未来趋势，揭秘海上乌托邦的独特体验。</div><div class="kh">核心观点</div><ul><li>邮轮是海上移动酒店，载客量巨大源于用户体验设计</li><li>嘉年华通过并购成为最大邮轮集团，资本驱动整合</li><li>小型奢华邮轮服务配比高，船上挂毕加索真迹</li><li>中国邮轮市场从2006年起步，最高年290万人次</li><li>邮轮旅行是海上乌托邦，让人从现实抽离放空</li><li>安全演习是上船第一要务，无论坐多少次都要做</li></ul></div>
+ <div class="note">来源：小宇宙播客《张小珺Jùn｜商业访谈录》· 硅基流动 SenseVoice 转录 + DeepSeek-V3 整理/导读 · 基于原始 ASR 可能有少量错字，说话人为模型推断</div>
+ <article id="article"><div class="outline-note">本页为摘要层 · 导读 / 核心观点 / 主题脉络；全文请收听原音</div><section class="sec" id="sec-0"><div class="sec-head"><div class="sec-top"><span class="sec-num">01</span><h2 class="sec-title">邮轮业入门与渊源</h2><span class="sec-rule"></span></div><div class="sec-brief">嘉宾介绍从业经历，邮轮从18世纪交通船演变而来</div></div></section><section class="sec" id="sec-1"><div class="sec-head"><div class="sec-top"><span class="sec-num">02</span><h2 class="sec-title">泰坦尼克号与历史事件</h2><span class="sec-rule"></span></div><div class="sec-brief">泰坦尼克号象征意义及对邮轮业的影响</div></div></section><section class="sec" id="sec-2"><div class="sec-head"><div class="sec-top"><span class="sec-num">03</span><h2 class="sec-title">邮轮巨头格局与并购史</h2><span class="sec-rule"></span></div><div class="sec-brief">皇家加勒比、嘉年华等巨头形成与资本并购故事</div></div></section><section class="sec" id="sec-3"><div class="sec-head"><div class="sec-top"><span class="sec-num">04</span><h2 class="sec-title">教母传统与海难文化</h2><span class="sec-rule"></span></div><div class="sec-brief">邮轮教母起源、摔香槟仪式及中国教母案例</div></div></section><section class="sec" id="sec-4"><div class="sec-head"><div class="sec-top"><span class="sec-num">05</span><h2 class="sec-title">奢华邮轮体验揭秘</h2><span class="sec-rule"></span></div><div class="sec-brief">小型奢华邮轮服务、价格、受众及毕加索真迹</div></div></section><section class="sec" id="sec-5"><div class="sec-head"><div class="sec-top"><span class="sec-num">06</span><h2 class="sec-title">大众邮轮推荐与对比</h2><span class="sec-rule"></span></div><div class="sec-brief">皇家加勒比绿洲系列等大众邮轮特色与价位</div></div></section><section class="sec" id="sec-6"><div class="sec-head"><div class="sec-top"><span class="sec-num">07</span><h2 class="sec-title">海上乌托邦的独特感受</h2><span class="sec-rule"></span></div><div class="sec-brief">邮轮旅行带来的抽离感、放空与心灵体验</div></div></section><section class="sec" id="sec-7"><div class="sec-head"><div class="sec-top"><span class="sec-num">08</span><h2 class="sec-title">疫情后全球邮轮见闻</h2><span class="sec-rule"></span></div><div class="sec-brief">嘉宾赴美国、智利、南极的邮轮旅行新体验</div></div></section><section class="sec" id="sec-8"><div class="sec-head"><div class="sec-top"><span class="sec-num">09</span><h2 class="sec-title">中国邮轮市场演变</h2><span class="sec-rule"></span></div><div class="sec-brief">邮轮进中国历程、现状及未来复航预期</div></div></section><section class="sec" id="sec-9"><div class="sec-head"><div class="sec-top"><span class="sec-num">10</span><h2 class="sec-title">邮轮基础知识与入门</h2><span class="sec-rule"></span></div><div class="sec-brief">晕船问题、航线推荐及国产大邮轮展望</div></div></section><section class="sec" id="sec-10"><div class="sec-head"><div class="sec-top"><span class="sec-num">11</span><h2 class="sec-title">产业分工与利润链</h2><span class="sec-rule"></span></div><div class="sec-brief">造船厂、邮轮公司、代理的角色与利润分配</div></div></section><section class="sec" id="sec-11"><div class="sec-head"><div class="sec-top"><span class="sec-num">12</span><h2 class="sec-title">快问快答与创业愿景</h2><span class="sec-rule"></span></div><div class="sec-brief">必吃食物、南极打卡、安全演习及生态旅行</div></div></section></article>
+ <div class="cta-card"><div class="cta-h">完整内容</div><p>这里是<b>摘要层</b>——导读、核心观点与逐段脉络。完整逐字稿仅供个人收藏，欢迎收听原始音频获取全部细节。</p><a class="cta-btn" href="https://www.xiaoyuzhoufm.com/episode/63caab586bcfd94102755c14" target="_blank">▶ 收听原音 · 小宇宙 ↗</a></div>
+ <div class="foot">录言 · 链接转文字知识库 — 链接转文字 · 自动结构化阅读<br>本条目由转录管线自动生成 · 仅供个人学习</div>
+</main></div>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const tb=$('#themeBtn');
+function setT(t){document.documentElement.dataset.theme=t;tb.textContent=t==='dark'?'☀':'☾';localStorage.setItem('zw-theme',t);}
+setT(localStorage.getItem('zw-theme')||'light');
+tb.onclick=()=>setT(document.documentElement.dataset.theme==='dark'?'light':'dark');
+const secs=$$('.sec'),links=$$('.toc a'),bar=$('#progress-bar'),fill=$('#readfill'),pct=$('#readpct');
+function onScroll(){
+ const h=document.documentElement,st=h.scrollTop,sh=h.scrollHeight-h.clientHeight,p=sh>0?st/sh:0;
+ bar.style.width=(p*100)+'%';
+ if(fill){fill.style.width=Math.round(p*100)+'%';pct.firstChild.textContent=Math.round(p*100);}
+ let cur=0;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<160)cur=i;});
+ links.forEach((l,i)=>l.classList.toggle('active',i===cur));
+}
+document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+const inp=$('#search'),art=$('#article');let marks=[];
+function clearMarks(){marks.forEach(m=>{const t=document.createTextNode(m.textContent);m.replaceWith(t);t.parentNode&&t.parentNode.normalize();});marks=[];}
+inp.addEventListener('input',()=>{
+ clearMarks();const q=inp.value.trim();if(q.length<2)return;
+ const rx=new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi');
+ const tw=document.createTreeWalker(art,NodeFilter.SHOW_TEXT,null);const nodes=[];let n;
+ while(n=tw.nextNode())if(n.parentNode.nodeName!=='MARK'&&rx.test(n.nodeValue))nodes.push(n);
+ nodes.forEach(node=>{const frag=document.createDocumentFragment();let last=0;const s=node.nodeValue;rx.lastIndex=0;let m;
+  while(m=rx.exec(s)){frag.appendChild(document.createTextNode(s.slice(last,m.index)));const mk=document.createElement('mark');mk.textContent=m[0];frag.appendChild(mk);marks.push(mk);last=m.index+m[0].length;if(m.index===rx.lastIndex)rx.lastIndex++;}
+  frag.appendChild(document.createTextNode(s.slice(last)));node.replaceWith(frag);});
+ if(marks.length)marks[0].scrollIntoView({behavior:'smooth',block:'center'});
+});
+</script></body></html>
